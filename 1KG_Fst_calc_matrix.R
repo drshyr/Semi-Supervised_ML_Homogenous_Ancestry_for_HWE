@@ -3,12 +3,12 @@
 #####for all subpopulations######
 #################################
 
-ALL.ids <- read.csv("/n/holystore01/LABS/xlin/Lab/dshyr/1KG/1KG_fst/1000Genomes_Indep_ids.csv", header=TRUE)
+ALL.ids <- read.csv("1000Genomes_Indep_ids.csv", header=TRUE)
 sub.pops <- unique(ALL.ids$Population)
 ###Load in 1000 Genomes Pruned Genotype##
 library(KRIS)
-geno = read.bed(bed = "/n/holystore01/LABS/xlin/Lab/dshyr/1KG/1KG_cleaned/1KG_pruned_forPCA.bed", bim = "/n/holystore01/LABS/xlin/Lab/dshyr/1KG/1KG_cleaned/1KG_pruned_forPCA.bim",
-                fam = "/n/holystore01/LABS/xlin/Lab/dshyr/1KG/1KG_cleaned/1KG_pruned_forPCA.fam")
+geno = read.bed(bed = "1KG_pruned_forPCA.bed", bim = "1KG_pruned_forPCA.bim",
+                fam = "1KG_pruned_forPCA.fam")
 #Sample ids#
 ind.info <- geno$ind.info
 
@@ -26,4 +26,4 @@ for(i in 1:(length(sub.pops) - 1)){
   }
 }
 
-write.csv(Fst.matrix, file = "/n/holystore01/LABS/xlin/Lab/dshyr/1KG/1KG_fst/1KG_Fstmatrix.csv")
+write.csv(Fst.matrix, file = "1KG_Fstmatrix.csv")
