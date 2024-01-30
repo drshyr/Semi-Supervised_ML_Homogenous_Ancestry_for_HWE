@@ -33,5 +33,3 @@ pop_forest = function(training_data, data, ntree=100, seed=42, pcs=1:10) {
   out1 <- cbind(sample.id, out)
   return(out1)
 }
-
-###Classify individuals who have a classification probability of less than 0.9 as "Other"
